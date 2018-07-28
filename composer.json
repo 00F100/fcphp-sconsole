@@ -1,0 +1,30 @@
+{
+    "name": "00f100/fcphp-sconsole",
+    "type": "package",
+    "version": "0.1.0",
+    "description": "Package security console requests",
+    "keywords": ["package", "security", "console", "requests"],
+    "homepage": "https://github.com/00f100/fcphp-sconsole",
+    "authors": [
+        {
+            "name": "João Moraes",
+            "email": "joaomoraesbr@gmail.com",
+            "homepage": "https://github.com/00f100"
+        }
+    ],
+    "require": {
+        "php": ">=7.2",
+        "00f100/array_dot": "0.*",
+        "00f100/fcphp-shttp": "0.*"
+    },
+    "require-dev": {
+        "00f100/phpdbug": "*",
+        "phpunit/phpunit": "6.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "FcPhp\\SConsole\\": "src/",
+            "FcPhp\\SConsole\\Test\\": "tests/"
+        }
+    }
+}

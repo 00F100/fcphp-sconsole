@@ -12,6 +12,13 @@ namespace FcPhp\SConsole
         private $params = [];
         private $authCallback;
 
+        /**
+         * Method to construct instance
+         *
+         * @param array $server $_SERVER params
+         * @return cPhp\SConsole\Interfaces\ISCEntity $entity Entity of Security Console
+         * @return void
+         */
         public function __construct(array $server, ISCEntity $entity)
         {
             $this->server = $server;
@@ -30,6 +37,11 @@ namespace FcPhp\SConsole
             $this->cleanParams();
         }
 
+        /**
+         * Method to clean args send with console command
+         *
+         * @return void
+         */
         private function cleanParams() :void
         {
             if(is_array($this->params['params'])) {
@@ -41,6 +53,11 @@ namespace FcPhp\SConsole
             }
         }
 
+        /**
+         * Method to get entity after callback auth
+         *
+         * @return FcPhp\SConsole\Interfaces\ISCEntity
+         */
         public function get() :ISCEntity
         {
             if(!is_null($this->authCallback)) {
@@ -50,17 +67,34 @@ namespace FcPhp\SConsole
             return $this->authGuest();
         }
 
-        public function authCallback(object $callback) :void
+        /**
+         * Method to configure auth callback
+         *
+         * @param object $callback Callback to execute
+         * @return void
+         */
+        public function authCallback(object $callback = null) :void
         {
             $this->authCallback = $callback;
         }
 
-        private function authGuest()
+        /**
+         * Method to auth guest user
+         *
+         * @return FcPhp\SConsole\Interfaces\ISCEntity
+         */
+        private function authGuest() :ISCEntity
         {
             $this->entity->setType('guest');
             return $this->entity;
         }
 
+        /**
+         * Method to get content of variable into server
+         *
+         * @param string $key Key to find
+         * @return string|array|null
+         */
         private function getContent(string $key)
         {
             if(isset($this->server[$key])) {

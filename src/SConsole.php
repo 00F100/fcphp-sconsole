@@ -7,9 +7,24 @@ namespace FcPhp\SConsole
     
     class SConsole implements ISConsole
     {
+        /**
+         * @var array Server params of request
+         */
         private $server = [];
+
+        /**
+         * @var FcPhp\SConsole\Interfaces\ISConsole Entity of Security Console
+         */
         private $entity;
+
+        /**
+         * @var array Params of request
+         */
         private $params = [];
+
+        /**
+         * @var object Callback to auth
+         */
         private $authCallback;
 
         /**
@@ -38,22 +53,6 @@ namespace FcPhp\SConsole
         }
 
         /**
-         * Method to clean args send with console command
-         *
-         * @return void
-         */
-        private function cleanParams() :void
-        {
-            if(is_array($this->params['params'])) {
-                foreach($this->params['params'] as $index => $value) {
-                    if($value == $this->params['script-name']) {
-                        unset($this->params['params'][$index]);
-                    }
-                }
-            }
-        }
-
-        /**
          * Method to get entity after callback auth
          *
          * @return FcPhp\SConsole\Interfaces\ISCEntity
@@ -76,6 +75,20 @@ namespace FcPhp\SConsole
         public function authCallback(object $callback = null) :void
         {
             $this->authCallback = $callback;
+        }
+
+        /**
+         * Method to clean args send with console command
+         *
+         * @return void
+         */
+        private function cleanParams() :void
+        {
+            if(is_array($this->params['params'])) {
+                if(isset($this->params['params'][0])) {
+                    unset($this->params['params'][0]);
+                }
+            }
         }
 
         /**

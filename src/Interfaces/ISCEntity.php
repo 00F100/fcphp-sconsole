@@ -6,6 +6,7 @@ namespace FcPhp\SConsole\Interfaces
     
     interface ISCEntity
     {
+
         /**
          * Method to construct instance of Security Entity
          *
@@ -13,8 +14,6 @@ namespace FcPhp\SConsole\Interfaces
          * @return void
          */
         public function __construct(int $expires = 84000);
-
-
 
         /**
          * Method to set Id of login
@@ -31,8 +30,6 @@ namespace FcPhp\SConsole\Interfaces
          */
         public function getId();
 
-
-
         /**
          * Method to set Name of login
          *
@@ -40,14 +37,13 @@ namespace FcPhp\SConsole\Interfaces
          * @return cPhp\SHttp\Interfaces\ISEntity
          */
         public function setName(string $name) :ISEntity;
+
         /**
          * Method to get Name of login
          *
          * @return string|null
          */
         public function getName();
-
-
 
         /**
          * Method to set E-mail of login
@@ -56,14 +52,13 @@ namespace FcPhp\SConsole\Interfaces
          * @return cPhp\SHttp\Interfaces\ISEntity
          */
         public function setEmail(string $email) :ISEntity;
+
         /**
          * Method to get E-mail of login
          *
          * @return string|null
          */
         public function getEmail();
-
-
 
         /**
          * Method to set User name of login
@@ -72,14 +67,13 @@ namespace FcPhp\SConsole\Interfaces
          * @return cPhp\SHttp\Interfaces\ISEntity
          */
         public function setUsername(string $username) :ISEntity;
+
         /**
          * Method to get User name of login
          *
          * @return string|null
          */
         public function getUsername();
-
-
 
         /**
          * Method to set Type of login
@@ -88,14 +82,13 @@ namespace FcPhp\SConsole\Interfaces
          * @return cPhp\SHttp\Interfaces\ISEntity
          */
         public function setType($type) :ISEntity;
+
         /**
          * Method to get Type of login
          *
          * @return string
          */
         public function getType() :string;
-
-
 
         /**
          * Method to set Permissions of login
@@ -104,12 +97,14 @@ namespace FcPhp\SConsole\Interfaces
          * @return cPhp\SHttp\Interfaces\ISEntity
          */
         public function setPermissions(array $permissions) :ISEntity;
+
         /**
          * Method to get Permissions of login
          *
          * @return array
          */
         public function getPermissions() :array;
+
         /**
          * Method to check if have access to permission
          *
@@ -117,8 +112,6 @@ namespace FcPhp\SConsole\Interfaces
          * @return bool
          */
         public function check(string $permission) :bool;
-
-
 
         /**
          * Method to set Custom data of login
@@ -128,6 +121,7 @@ namespace FcPhp\SConsole\Interfaces
          * @return cPhp\SHttp\Interfaces\ISEntity
          */
         public function setCustomData(string $key, $customData) :ISEntity;
+
         /**
          * Method to get Custom data of login
          *
@@ -136,8 +130,6 @@ namespace FcPhp\SConsole\Interfaces
          */
         public function getCustomData(string $key = null);
 
-
-
         /**
          * Method to set Errors of login
          *
@@ -145,12 +137,14 @@ namespace FcPhp\SConsole\Interfaces
          * @return cPhp\SHttp\Interfaces\ISEntity
          */
         public function setError(string $message) :ISEntity;
+
         /**
          * Method to get Errors of login
          *
          * @return array
          */
         public function getError() :array;
+        
         /**
          * Method to check if have errors in login
          *

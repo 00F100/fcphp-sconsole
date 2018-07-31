@@ -1,6 +1,6 @@
 # FcPhp Security Console
 
-Library to manipulate auth of user into Console env
+Library to manipulate auth of user into Console
 
 [![Build Status](https://travis-ci.org/00F100/fcphp-sconsole.svg?branch=master)](https://travis-ci.org/00F100/fcphp-sconsole) [![codecov](https://codecov.io/gh/00F100/fcphp-sconsole/branch/master/graph/badge.svg)](https://codecov.io/gh/00F100/fcphp-sconsole) [![Total Downloads](https://poser.pugx.org/00F100/fcphp-sconsole/downloads)](https://packagist.org/packages/00F100/fcphp-sconsole)
 

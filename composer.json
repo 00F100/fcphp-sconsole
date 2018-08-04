@@ -1,7 +1,7 @@
 {
     "name": "00f100/fcphp-sconsole",
     "type": "package",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "description": "Package security console requests",
     "keywords": ["package", "security", "console", "requests"],
     "homepage": "https://github.com/00f100/fcphp-sconsole",
